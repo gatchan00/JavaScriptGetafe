@@ -1,0 +1,29 @@
+<html>
+<script type="text/javascript">
+function cuenta(){
+	var texto=document.getElementById("texto").value;
+	var listadoPalabras=texto.split(" ");
+	console.log(listadoPalabras)
+	var mapa={};
+	for(var i=0;i<listadoPalabras.length;i++){
+		if (typeof mapa[listadoPalabras[i]]=="undefined"){
+			mapa[listadoPalabras[i]]=1;
+		}
+		else{
+			mapa[listadoPalabras[i]]++;
+		}
+	}
+	var claves=Object.keys(mapa);
+	for (var i=0;i<claves.length;i++){
+		console.log(claves[i]+" "+mapa[claves[i]]);
+	}
+	
+} 
+</script>
+<body>
+<input id="texto" type="text">
+<button type="button" onclick="cuenta()"> cuenta </button>
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

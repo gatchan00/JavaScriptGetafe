@@ -1,0 +1,27 @@
+<html>
+<script type="text/javascript">
+function valida(){
+	var pass=document.getElementById("passw").value
+	var error="";
+	if (pass.length<8){
+		error+=" Longitud inadecuada,";
+	}
+	if (pass.charAt(0)<'A' || pass.charAt(0)>'Z'){
+		error+=" Primera letra no es mayúscula,";
+	}
+	if (error==""){
+		alert("Válida");
+	}
+	else{
+		alert(error);
+	}
+ 
+} 
+</script>
+<body>
+<input id="passw" type="text">
+<button type="button" onclick="valida()"> valida </button>
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->
