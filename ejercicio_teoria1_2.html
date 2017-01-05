@@ -1,0 +1,23 @@
+<html>
+<script type="text/javascript">
+var variable1="Esta es una variable global en realidad"
+function probandoVariables(){
+	alert(variable1);
+	variable2="GlobalAlNoEstarDeclaradad";
+}
+function probandoVariable2(vlocal){
+	alert(variable2);
+	alert(vlocal);
+}
+probandoVariable2(variable1);
+probandoVariables();
+probandoVariable2(variable1);
+
+</script>
+<body>
+
+ 
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

@@ -1,0 +1,70 @@
+<html>
+<script type="text/javascript">
+function primo(){
+	var a=parseInt(document.getElementById("op_primo").value);
+	var hasta=Math.sqrt(a);
+	var divisor=a;
+	if (a===2){
+		document.getElementById("result").innerHTML="Es primo1";
+	}
+	else{
+		if ((a%2)==0){
+			document.getElementById("result").innerHTML="No es primo, divisible entre 2";
+			return;
+		}
+		for (var i=3;i<=hasta;i=i+2){
+			if ((a%i)==0){
+				document.getElementById("result").innerHTML="No es primo, divisible entre "+i;
+				divisor=i;
+				break;
+			}
+		}
+		if (divisor==a){
+			document.getElementById("result").innerHTML="Es primo";
+		}
+	}
+ 
+} 
+function comparaTexto(){
+	var a=(document.getElementById("op1").value);
+	var b=(document.getElementById("op2").value);
+	if (a>b){
+		alert(a+" es mayor que "+b);
+	}
+	else if (a<b){
+		alert(a+" es menor que "+b);
+	}
+	else{
+		alert(a+" es igual que "+b);
+	}
+}
+function comparaNumero(){
+	var a=parseInt(document.getElementById("op1").value);
+	var b=parseInt(document.getElementById("op2").value);
+	if (a>b){
+		alert(a+" es mayor que "+b);
+	}
+	else if (a<b){
+		alert(a+" es menor que "+b);
+	}
+	else{
+		alert(a+" es igual que "+b);
+	}
+}
+</script>
+<body>
+<input id="op_primo" type="text">
+<p id="result">Resultado</p>
+<button type="button" onclick="primo()"> ¿Es Primo? </button>
+<br><br>
+<input id="op1" type="text">
+<input id="op2" type="text">
+<button type="button" onclick="comparaTexto()"> compara texto </button>
+<button type="button" onclick="comparaNumero()"> compara número </button>
+
+
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

@@ -1,0 +1,27 @@
+<html>
+<script type="text/javascript">
+ function fechas(){
+	var f1=new Date(parseInt(document.getElementById("date1_year").value),parseInt(document.getElementById("date1_month").value),parseInt(document.getElementById("date1_day").value));
+	var f2=new Date(parseInt(document.getElementById("date2_year").value),parseInt(document.getElementById("date2_month").value),parseInt(document.getElementById("date2_day").value));
+	alert("Total de ms de diferencia "+(f1.getTime()-f2.getTime()));
+}  
+</script>
+<body>
+<p>Fecha 1</p>
+<input id="date1_year" type="text">
+<input id="date1_month" type="text">
+<input id="date1_day" type="text">
+<br>
+<p>Fecha 2</p>
+<input id="date2_year" type="text">
+<input id="date2_month" type="text">
+<input id="date2_day" type="text">
+<br>
+ 
+<button type="button" onclick="fechas()"> comparar </button>
+ 
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

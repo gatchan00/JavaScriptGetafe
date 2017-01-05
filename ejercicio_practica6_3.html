@@ -1,0 +1,39 @@
+<html>
+<script type="text/javascript">
+var arrayIncidencias={};
+function fechas(){
+	var f1=new Date(parseInt(document.getElementById("date1_year").value),parseInt(document.getElementById("date1_month").value),parseInt(document.getElementById("date1_day").value));
+	arrayIncidencias[f1]=document.getElementById("incidencia").value; 
+}  
+function muestra(){
+	var copiaFechas=Object.keys(arrayIncidencias);
+	console.log(copiaFechas);
+	//ojo, sort ordena alfabéticamente, si quiero ordenar por número, he de especificar la función de comparación
+	copiaFechas.sort(function (a, b) {  return new Date(a).getTime() -  new Date(b).getTime();  });
+
+	for (var i=0;i<copiaFechas.length;i++){
+		var factual=copiaFechas[i];
+		//busco la fecha que tengo ahora mismo
+		console.log(factual+" ->"+arrayIncidencias[factual]);
+	}
+}
+
+</script>
+<body>
+<p>Fecha</p>
+<input id="date1_year" type="text">
+<input id="date1_month" type="text">
+<input id="date1_day" type="text">
+<br>
+<p>Incidencia</p>
+<input id="incidencia" type="text">
+<br>
+ 
+<button type="button" onclick="fechas()"> inserta </button>
+ <button type="button" onclick="muestra()"> muestra </button>
+ 
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

@@ -1,0 +1,50 @@
+<html>
+<script type="text/javascript">
+function suma(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+		var result=new Number(parseFloat(a)+parseFloat(b));
+		document.getElementById("result").innerHTML=result.toFixed(document.getElementById("precision").value);
+}
+ function resta(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+		var result=new Number(parseFloat(a)-parseFloat(b));
+		document.getElementById("result").innerHTML=result.toFixed(document.getElementById("precision").value);
+}
+ function multiplica(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+		var result=new Number(parseFloat(a)*parseFloat(b));
+		document.getElementById("result").innerHTML=result.toFixed(document.getElementById("precision").value);
+}
+ function divide(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+	try{
+		if(parseFloat(b)==0){throw "LA LIASTES";}
+		var result=new Number(parseFloat(a)/parseFloat(b));
+		document.getElementById("result").innerHTML=result.toFixed(document.getElementById("precision").value);
+	}
+	catch (errorcito){
+		alert("You are so gañán that you tried to divide by ZERO");
+		document.getElementById("result").innerHTML="Gañán user not allowed";
+	}
+}
+ 
+</script>
+<body>
+<input id="op1" type="text">
+<input id="op2" type="text">
+<p id="result">Resultado</p>
+<input id="precision" type="text">
+<button type="button" onclick="suma()"> + </button>
+<button type="button" onclick="resta()"> - </button>
+<button type="button" onclick="multiplica()"> * </button>
+<button type="button" onclick="divide()"> / </button>
+
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

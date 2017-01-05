@@ -1,0 +1,32 @@
+<html>
+<script type="text/javascript">
+function ejercicio1(){
+	var total=1;
+	for (var i=17;i>0;i--){
+		total*=i;
+	}
+	alert(total);
+}
+function ejercicio2(){
+ 	for (var i=0;i<100;i++){
+		console.log("hola");
+	}
+ 
+}
+function ejercicio3(){
+	var total=0;
+	while (Math.random()<0.8){
+		total++;
+	}
+	alert("Se han obtenido un total de "+total+" tiradas inferiores a 0.8");
+}
+</script>
+<body>
+<button type="button" onclick="ejercicio1()"> Ejercicio 1</button>
+<button type="button" onclick="ejercicio2()"> Ejercicio 2</button>
+<button type="button" onclick="ejercicio3()"> Ejercicio 3</button>
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

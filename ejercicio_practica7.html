@@ -1,0 +1,22 @@
+<html>
+<script type="text/javascript">
+function suma(a,b){
+	var result = 0;
+	//alert(arguments.length);
+	if(arguments.length>2){
+		for(i = 0; i<arguments.length;i++){
+			result += arguments[i];
+		}
+	}else{
+		result = a+b;
+	}
+	return result;
+}
+alert(suma(3,4,5,63,3));
+</script>
+<body>
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->

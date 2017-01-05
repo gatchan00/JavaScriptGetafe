@@ -1,0 +1,45 @@
+<html>
+<script type="text/javascript">
+function suma(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+	document.getElementById("result").innerHTML=parseInt(a)+parseInt(b);
+}
+ function resta(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+	document.getElementById("result").innerHTML=parseInt(a)-parseInt(b);
+}
+ function multiplica(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+	document.getElementById("result").innerHTML=parseInt(a)*parseInt(b);
+}
+ function divide(){
+	var a=document.getElementById("op1").value;
+	var b=document.getElementById("op2").value;
+	try{
+		if(parseInt(b)==0){throw "LA LIASTES";}
+	document.getElementById("result").innerHTML=parseInt(a)/parseInt(b);
+	}
+	catch (errorcito){
+		alert("You are so gañán that you tried to divide by ZERO");
+		document.getElementById("result").innerHTML="Gañán user not allowed";
+	}
+}
+ 
+</script>
+<body>
+<input id="op1" type="text">
+<input id="op2" type="text">
+<p id="result">Resultado</p>
+<button type="button" onclick="suma()"> + </button>
+<button type="button" onclick="resta()"> - </button>
+<button type="button" onclick="multiplica()"> * </button>
+<button type="button" onclick="divide()"> / </button>
+
+
+</body>
+</html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->
