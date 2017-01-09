@@ -1,0 +1,48 @@
+<html>
+<script type="text/javascript">
+function validaemail(){
+	var pass=document.getElementById("email").value
+	var re_passw=/^\w+@\w+(\.\w+){1,2}$/
+	if (re_passw.test(pass)){
+		alert("Correo Válido");
+	}
+	else{
+		alert("Correo NO válido");
+	}
+ 
+} 
+function validaPostCode(){
+	var pass=document.getElementById("uk_pc").value
+	var re_passw=/^[a-zA-Z]{1,2}\d\w? \d[a-zA-Z]{2}$/
+	if (re_passw.test(pass)){
+		alert("Código Postal Válido");
+	}
+	else{
+		alert("Código Postal NO válido");
+	}
+ 
+} 
+function validaPhone(){
+	var pass=document.getElementById("phone").value
+	var re_passw=/^((\+\d{1,3})|(00\d{1,3}))?\d{7,12}$/
+	if (re_passw.test(pass)){
+		alert("Teléfono Válido");
+	}
+	else{
+		alert("Teléfono NO válido");
+	}
+ 
+} 
+</script>
+<body>
+<input id="email" type="text">
+<button type="button" onclick="validaemail()"> valida email</button>
+<br>
+<input id="uk_pc" type="text">
+<button type="button" onclick="validaPostCode()"> valida Código Postal</button>
+<br>
+<input id="phone" type="text">
+<button type="button" onclick="validaPhone()"> valida Teléfono</button>
+<br>
+</body>
+</html>

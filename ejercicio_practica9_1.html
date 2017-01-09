@@ -1,0 +1,19 @@
+<html>
+<script type="text/javascript">
+function valida(){
+	var pass=document.getElementById("passw").value
+	var re_passw=/^[A-Z]\w{7,}$/
+	if (re_passw.test(pass)){
+		alert("Válida");
+	}
+	else{
+		alert("Contraseña no válida, ha de empezar por mayúscula y tener al menos 8 caracteres");
+	}
+ 
+} 
+</script>
+<body>
+<input id="passw" type="text">
+<button type="button" onclick="valida()"> valida </button>
+</body>
+</html>
