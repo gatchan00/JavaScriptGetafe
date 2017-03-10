@@ -6,22 +6,21 @@ function insertaUsuario(){
 	var apellidos=document.getElementById("apellidos").value;
 	var preferencias=document.getElementById("preferencias").value;
 	//1- mirar si ya existe ese objeto
-	var nuevoUsuario;
+	var usuario;
 	for (var i=0;i<arrayUsuarios.length;i++){
 		if (arrayUsuarios[i].name==name && arrayUsuarios[i].apellidos==apellidos){
-			nuevoUsuario=arrayUsuarios[i];
+			usuario=arrayUsuarios[i];
 		}
 	}
-	var existe=true;
-	if (nuevoUsuario==null){
-		nuevoUsuario={};
-		nuevoUsuario.name=name;
-		nuevoUsuario.apellidos=apellidos;
-		nuevoUsuario.preferencias=[];
-		existe=false;
+	if (usuario==null){
+		usuario={};
+		usuario.name=name;
+		usuario.apellidos=apellidos;
+		usuario.preferencias=[];
+		arrayUsuarios.push(usuario);
 	}
-	nuevoUsuario.preferencias.push(preferencias);
-	if (existe==false){arrayUsuarios.push(nuevoUsuario);}
+	usuario.preferencias.push(preferencias);
+	
 	
 }
 
