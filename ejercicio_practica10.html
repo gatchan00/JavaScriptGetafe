@@ -1,0 +1,40 @@
+<html>
+<script type="text/javascript">
+var arrayUsuarios=[];
+function insertaUsuario(){
+	var name=document.getElementById("name").value;
+	var apellidos=document.getElementById("apellidos").value;
+	var preferencias=document.getElementById("preferencias").value;
+	//1- mirar si ya existe ese objeto
+	var nuevoUsuario;
+	for (var i=0;i<arrayUsuarios.length;i++){
+		if (arrayUsuarios[i].name==name && arrayUsuarios[i].apellidos==apellidos){
+			nuevoUsuario=arrayUsuarios[i];
+		}
+	}
+	var existe=true;
+	if (nuevoUsuario==null){
+		nuevoUsuario={};
+		nuevoUsuario.name=name;
+		nuevoUsuario.apellidos=apellidos;
+		nuevoUsuario.preferencias=[];
+		existe=false;
+	}
+	nuevoUsuario.preferencias.push(preferencias);
+	if (existe==false){arrayUsuarios.push(nuevoUsuario);}
+	
+}
+
+function mostrarConsola(){
+console.log(JSON.stringify(arrayUsuarios));
+}
+</script>
+<body>
+<input id="name" type="text" value="nombre">
+<input id="apellidos" type="text" value="apellidos">
+<input id="preferencias" type="text" value="preferencias">
+<button type="button" onclick="insertaUsuario()"> Insertar</button>
+ <button type="button" onclick="mostrarConsola()"> Mostrar</button>
+ 
+</body>
+</html>
