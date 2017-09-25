@@ -1,39 +1,62 @@
 <html>
 <script type="text/javascript">
-var arrayUsuarios=[];
+var listadoUsuarios=[]
+var currUser={}
+currUser.preferencias=[]
+function ponNombre(){
+	currUser.nombre=document.getElementById('nombre').value;
+	muestraUsuario()
+	document.getElementById('nombre').value=""
+}
+function ponEdad(){
+	currUser.edad=parseInt(document.getElementById('edad').value);
+	muestraUsuario()
+	document.getElementById('edad').value=""
+}
+function ponPreferencia(){
+	currUser.preferencias.push(document.getElementById('preferencia').value);
+	muestraUsuario()
+	document.getElementById('preferencia').value=""
+}
 function insertaUsuario(){
-	var name=document.getElementById("name").value;
-	var apellidos=document.getElementById("apellidos").value;
-	var preferencias=document.getElementById("preferencias").value;
-	//1- mirar si ya existe ese objeto
-	var usuario;
-	for (var i=0;i<arrayUsuarios.length;i++){
-		if (arrayUsuarios[i].name==name && arrayUsuarios[i].apellidos==apellidos){
-			usuario=arrayUsuarios[i];
-		}
-	}
-	if (usuario==null){
-		usuario={};
-		usuario.name=name;
-		usuario.apellidos=apellidos;
-		usuario.preferencias=[];
-		arrayUsuarios.push(usuario);
-	}
-	usuario.preferencias.push(preferencias);
-	
-	
+	listadoUsuarios.push(currUser)
+	currUser={}
+	currUser.preferencias=[]
+	muestraUsuarios()
 }
 
-function mostrarConsola(){
-console.log(JSON.stringify(arrayUsuarios));
+function muestraUsuario(){
+if (currUser.preferencias != undefined){
+document.getElementById("info").innerHTML="CurrentUser <br>----<br> nombre= "+currUser.nombre+"<br> edad= "+currUser.edad+"<br> preferencias= "+currUser.preferencias.join(",")
+}
+else{
+document.getElementById("info").innerHTML="CurrentUser <br>----<br> nombre= "+currUser.nombre+"<br> edad= "+currUser.edad
+}
+}
+function muestraUsuarios(){
+var result="LISTADO:<br>----<br>";
+for (var i=0;i<listadoUsuarios.length;i++){
+result+="usuario "+i+" nombre= "+listadoUsuarios[i].nombre+"<br> edad= "+listadoUsuarios[i].edad+"<br> preferencias= "+listadoUsuarios[i].preferencias.join(",")+"<br>----<br>"
+}
+document.getElementById("info").innerHTML=result;
 }
 </script>
 <body>
-<input id="name" type="text" value="nombre">
-<input id="apellidos" type="text" value="apellidos">
-<input id="preferencias" type="text" value="preferencias">
-<button type="button" onclick="insertaUsuario()"> Insertar</button>
- <button type="button" onclick="mostrarConsola()"> Mostrar</button>
- 
+<input id="nombre" type="text">
+<button type="button" onclick="ponNombre()"> Poner Nombre</button>
+<br>
+<input id="edad" type="text">
+<button type="button" onclick="ponEdad()"> Poner Edad</button>
+<br>
+<input id="preferencia" type="text">
+<button type="button" onclick="ponPreferencia()"> Poner preferencia</button>
+<br>
+<button type="button" onclick="insertaUsuario()"> InsertarUsuario</button>
+<br>
+<button type="button" onclick="muestraUsuarios()"> Mostrar usuarios</button>
+<br>
+<p id="info"></p>
 </body>
 </html>
+
+<!-- document.getElementById('demo').innerHTML = Date()-->
